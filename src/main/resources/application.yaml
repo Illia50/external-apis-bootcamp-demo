@@ -7,3 +7,9 @@ server:
 
 external-service:
   base-url: ${EXTERNAL_SERVICE_URL:https://external-api.acnbootcamp.lv/api}
+  # How long to wait for a TCP connection / for the response before giving up.
+  connect-timeout: 3s
+  read-timeout: 5s
+  # WebClient only: retries for 5xx responses, connection errors and timeouts (never for 4xx).
+  max-retries: 2
+  retry-backoff: 300ms
